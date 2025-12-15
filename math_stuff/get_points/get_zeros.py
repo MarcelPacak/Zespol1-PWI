@@ -1,3 +1,18 @@
+# TEST
+class Polynomial:
+    def get_value(x, y):
+        return x * y**3 + x**2 * y + 1
+
+    def set_x(x):
+        return
+
+
+class PolymonialFunction:
+    degree = 3
+    def get_value(x):
+        return -3 * x**3 + 9 * x + 0.5
+# TEST
+
 def close_to_zero(value: float, epsilon: float) -> bool:
     return value <= epsilon and value >= -1 * epsilon
 

@@ -1,4 +1,7 @@
-from Vector import Vector
+class Vector:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
 
 class Matrix:
     def __init__(self, a: float, b: float, c: float, d: float):
