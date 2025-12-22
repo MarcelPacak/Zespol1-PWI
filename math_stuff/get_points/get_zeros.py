@@ -1,23 +1,10 @@
-# TEST
-class Polynomial:
-    def get_value(x, y):
-        return x * y**3 + x**2 * y + 1
-
-    def set_x(x):
-        return
-
-
-class PolymonialFunction:
-    degree = 3
-    def get_value(x):
-        return -3 * x**3 + 9 * x + 0.5
-# TEST
+from polynomialTEST import *
 
 def close_to_zero(value: float, epsilon: float) -> bool:
     return value <= epsilon and value >= -1 * epsilon
 
 # f(p) MUST be negative and f(q) MUST be positive, otherwise it's UB
-def get_zero(function: PolymonialFunction, p: float, q: float, epsilon: float) -> float:
+def get_zero(function: PolynomialFunction, p: float, q: float, epsilon: float) -> float:
     pivot = (p + q) / 2
     value = function.get_value(pivot)
 
@@ -27,7 +14,7 @@ def get_zero(function: PolymonialFunction, p: float, q: float, epsilon: float) -
         return get_zero(function, p, pivot, epsilon)
     return  get_zero(function, pivot, q, epsilon)
 
-def get_zeros(function: PolymonialFunction, p: float, q: float, epsilon: float, sections: int) -> list:
+def get_zeros(function: PolynomialFunction, p: float, q: float, epsilon: float, sections: int) -> list:
     delta = (q - p) / sections
     zeros = []
     ptr_old = p
