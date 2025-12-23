@@ -10,14 +10,22 @@ class Polynomial:
     
     def calc_polynomial(self, x: float, y: float):
         result = 0
-        for i in self.list_of_elements:
+        for coeff, x_exp, y_exp in self.list_of_elements:
             result += coeff * (x ** x_exp) * (y ** y_exp)
         return result
 
 
-    def set_x(self): #zwracanie wielomianu jednej zmiennej x lub y
-        pass
+    def set_x(self, x: float): #zwracanie wielomianu jednej zmiennej x lub y
+        PolynomialFunction = []
+        for coeff, x_exp, y_exp in self.list_of_elements:
+            new_element = Elements(coeff + (x ** x_exp), 0, y_exp)
+            PolynomialFunction.append(new_element)
+        return PolynomialFunction
     #zwracany obiekt ma miec nazwe PolynomialFunction
 
-    def set_y(self): 
-        pass
+    def set_y(self, y: float): 
+        PolynomialFunction = []
+        for coeff, x_exp, y_exp in self.list_of_elements:
+            new_element = Elements(coeff + (y ** y_exp), x_exp, 0)
+            PolynomialFunction.append(new_element)
+        return PolynomialFunction
