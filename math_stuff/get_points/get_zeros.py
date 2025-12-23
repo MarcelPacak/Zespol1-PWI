@@ -1,10 +1,10 @@
-from polynomialTEST import *
+from math_stuff.polynomial.polynomial import *
 
 def close_to_zero(value: float, epsilon: float) -> bool:
     return value <= epsilon and value >= -1 * epsilon
 
 # f(p) MUST be negative and f(q) MUST be positive, otherwise it's UB
-def get_zero(function: PolynomialFunction, p: float, q: float, epsilon: float) -> float:
+def get_zero(function: Polynomial1, p: float, q: float, epsilon: float) -> float:
     pivot = (p + q) / 2
     value = function.get_value(pivot)
 
@@ -14,7 +14,7 @@ def get_zero(function: PolynomialFunction, p: float, q: float, epsilon: float) -
         return get_zero(function, p, pivot, epsilon)
     return  get_zero(function, pivot, q, epsilon)
 
-def get_zeros(function: PolynomialFunction, p: float, q: float, epsilon: float, sections: int) -> list:
+def get_zeros(function: Polynomial1, p: float, q: float, epsilon: float, sections: int) -> list:
     delta = (q - p) / sections
     zeros = []
     ptr_old = p

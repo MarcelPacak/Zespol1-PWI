@@ -1,12 +1,12 @@
-from polynomialTEST import *
-from get_zeros import get_zeros
+from math_stuff.polynomial.polynomial import *
+from .get_zeros import get_zeros
 
 def float_range(start: float, stop: float, step: float):
     while(start < stop):
         yield start
         start += step
 
-def get_points(polynomial: Polynomial, left_down_corner: tuple, right_up_corner: tuple, epsilon: float, horizontal_sections: int, vertical_sections: int) -> list:
+def get_points(polynomial: Polynomial2, left_down_corner: tuple, right_up_corner: tuple, epsilon: float, horizontal_sections: int, vertical_sections: int) -> list:
     points = []
     
     # X axis
