@@ -41,3 +41,4 @@ class Polynomial:
             list_of_set_y.append(new_element)
         PolynomialFunctionY = PolynomialFunction(list_of_set_y, y)
         return PolynomialFunctionY
+
